@@ -45,6 +45,28 @@ Challenge Source: https://www.codewars.com/kata/57e3f79c9cb119374600046b/php
 // echo hello('jImMy');
 // echo hello('');
 // echo hello();
+
+/* 
+Challenge Three: We want an array, but not just any old array, an array with contents! Write a function that produces an array with the numbers 0 to N-1 in it.
+Challenge Source: https://www.codewars.com/kata/571d42206414b103dc0006a1
+*/
+
+function arr($n=null) {
+    $newArr = [];
+    if ($n == NULL) {
+      return $newArr;
+    }
+    $x = 0;
+    while ($x < $n) {
+        array_push($newArr, $x++);
+    }
+    return $newArr;
+  }
+
+// TESTS
+echo arr();
+echo arr(4);
+echo arr(0);
 ?>
 </body>
 </html>
