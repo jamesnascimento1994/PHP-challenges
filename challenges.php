@@ -73,13 +73,35 @@ Challenge Four: Return the number (count) of vowels in the given string. We will
 Challenge Source: https://www.codewars.com/kata/54ff3102c1bad923760001f3
 */
 
-function getCount($str) {
+// function getCount($str) {
   
-    return strlen(preg_replace("/[^aeiou]/i", "", $str));
-}
+//     return strlen(preg_replace("/[^aeiou]/i", "", $str));
+// }
 
-// TESTS
-echo getCount("abracadabra");
+// // TESTS
+// echo getCount("abracadabra");
+
+/* 
+Challenge Five: Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+Challenge Source: https://www.codewars.com/kata/5467e4d82edf8bbf40000155
+*/
+
+function descendingOrder(int $n): int {
+    // Replace with your code
+    $parseFloat = floatval($n);
+    $toString = strval($parseFloat);
+    $length = 1;
+    $splitStr = str_split($toString, $length);
+    rsort($splitStr);
+    $joined = implode($splitStr);
+    $sign = $n <=> 0;
+    return $joined * $sign;
+  }
+
+  // TESTS
+  echo descendingOrder(42145);
+  echo descendingOrder(145263);
+  echo descendingOrder(123456789);
 ?>
 </body>
 </html>
