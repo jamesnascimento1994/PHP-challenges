@@ -51,22 +51,35 @@ Challenge Three: We want an array, but not just any old array, an array with con
 Challenge Source: https://www.codewars.com/kata/571d42206414b103dc0006a1
 */
 
-function arr($n=null) {
-    $newArr = [];
-    if ($n == NULL) {
-      return $newArr;
-    }
-    $x = 0;
-    while ($x < $n) {
-        array_push($newArr, $x++);
-    }
-    return $newArr;
-  }
+// function arr($n=null) {
+//     $newArr = [];
+//     if ($n == NULL) {
+//       return $newArr;
+//     }
+//     $x = 0;
+//     while ($x < $n) {
+//         array_push($newArr, $x++);
+//     }
+//     return $newArr;
+//   }
+
+// // TESTS
+// echo arr();
+// echo arr(4);
+// echo arr(0);
+
+/* 
+Challenge Four: Return the number (count) of vowels in the given string. We will consider a, e, i, o, u as vowels for this Kata (but not y). The input string will only consist of lower case letters and/or spaces.
+Challenge Source: https://www.codewars.com/kata/54ff3102c1bad923760001f3
+*/
+
+function getCount($str) {
+  
+    return strlen(preg_replace("/[^aeiou]/i", "", $str));
+}
 
 // TESTS
-echo arr();
-echo arr(4);
-echo arr(0);
+echo getCount("abracadabra");
 ?>
 </body>
 </html>
