@@ -109,14 +109,33 @@ Challenge Six: Jaden Smith, the son of Will Smith, is the star of films such as 
 Challenge Source: https://www.codewars.com/kata/5390bac347d09b7da40006f6
 */
 
-function toJadenCase($string) 
-{
-   //...
-  return ucwords($string);
-}
+// function toJadenCase($string) 
+// {
+//    //...
+//   return ucwords($string);
+// }
 
-// TESTS
-toJadenCase("How can mirrors be real if our eyes aren't real");
+// // TESTS
+// toJadenCase("How can mirrors be real if our eyes aren't real");
+
+/* 
+Challenge Seven: Define a function that takes one integer argument and returns logical value true or false depending on if the integer is a prime. Per Wikipedia, a prime number (or a prime) is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+
+Challenge Source: https://www.codewars.com/kata/5390bac347d09b7da40006f6
+*/
+
+function is_prime(int $n): bool {
+
+    for ($x = 2; $x * $x <= $n; $x++) {
+      if ($n % $x === 0) return false;
+    }
+    return $n > 1;
+  }
+
+  // TESTS
+  echo is_prime(1);
+  echo is_prime(2);
+  echo is_prime(-1);
 ?>
 </body>
 </html>
