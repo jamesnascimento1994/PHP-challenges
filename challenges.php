@@ -142,48 +142,62 @@ Challenge Eight: In this kata, you will write a function that returns the positi
 Challenge Source: https://www.codewars.com/kata/5279f6fe5ab7f447890006a7
 */
 
-function checkPlateau($arr) {
-  $value = $arr[0];
-  for ($i = 0; $i < count($arr); $i++) {
-    if ($arr[$i] > $value) return false;
-    if ($arr[$i] < $value) return true;
-  }
+// function checkPlateau($arr) {
+//   $value = $arr[0];
+//   for ($i = 0; $i < count($arr); $i++) {
+//     if ($arr[$i] > $value) return false;
+//     if ($arr[$i] < $value) return true;
+//   }
+// }
+
+// function pickPeaks(array $arr) {
+//     // Replace with your code
+//     $output = array('pos' => array(), 'peaks' => array());
+      
+//     for ($i=1;$i<count($arr)-1;$i++) {
+      
+//       if ($arr[$i-1] < $arr[$i]) {
+//         if ($arr[$i] > $arr[$i+1]) {
+//         array_push($output['pos'], $i);
+//         array_push($output['peaks'], $arr[$i]);
+//       } else {
+//           if ($arr[$i] === $arr[$i+1]) {
+//             if (checkPlateau(array_slice($arr, $i))) {
+//               array_push($output['pos'], $i);
+//               array_push($output['peaks'], $arr[$i]);
+//             }
+//           }
+//         } 
+//       }
+//     }
+//   return $output;
+// }
+
+// // TESTS
+// echo pickPeaks([1,2,3,6,4,1,2,3,2,1]);
+// echo pickPeaks([3,2,3,6,4,1,2,3,2,1,2,3]);
+// echo pickPeaks([3,2,3,6,4,1,2,3,2,1,2,2,2,1]);
+// echo pickPeaks([2,1,3,1,2,2,2,2,1]);
+// echo pickPeaks([2,1,3,1,2,2,2,2]);
+// echo pickPeaks([2,1,3,2,2,2,2,5,6]);
+// echo pickPeaks([2,1,3,2,2,2,2,1]);
+// echo pickPeaks([1,2,5,4,3,2,3,6,4,1,2,3,3,4,5,3,2,1,2,3,5,5,4,3]);
+// echo pickPeaks([]);
+// echo pickPeaks([1,1,1,1]);
+
+/* 
+Challenge Nine: Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+Challenge Source: https://www.codewars.com/kata/515de9ae9dcfc28eb6000001
+*/
+
+function solution($str) {
+  return $str === "" ? [] : str_split(
+    strlen($str) % 2 === 0 ? $str : $str . '_', 2
+  );
 }
 
-function pickPeaks(array $arr) {
-    // Replace with your code
-    $output = array('pos' => array(), 'peaks' => array());
-      
-    for ($i=1;$i<count($arr)-1;$i++) {
-      
-      if ($arr[$i-1] < $arr[$i]) {
-        if ($arr[$i] > $arr[$i+1]) {
-        array_push($output['pos'], $i);
-        array_push($output['peaks'], $arr[$i]);
-      } else {
-          if ($arr[$i] === $arr[$i+1]) {
-            if (checkPlateau(array_slice($arr, $i))) {
-              array_push($output['pos'], $i);
-              array_push($output['peaks'], $arr[$i]);
-            }
-          }
-        } 
-      }
-    }
-  return $output;
-}
-
-// TESTS
-echo pickPeaks([1,2,3,6,4,1,2,3,2,1]);
-echo pickPeaks([3,2,3,6,4,1,2,3,2,1,2,3]);
-echo pickPeaks([3,2,3,6,4,1,2,3,2,1,2,2,2,1]);
-echo pickPeaks([2,1,3,1,2,2,2,2,1]);
-echo pickPeaks([2,1,3,1,2,2,2,2]);
-echo pickPeaks([2,1,3,2,2,2,2,5,6]);
-echo pickPeaks([2,1,3,2,2,2,2,1]);
-echo pickPeaks([1,2,5,4,3,2,3,6,4,1,2,3,3,4,5,3,2,1,2,3,5,5,4,3]);
-echo pickPeaks([]);
-echo pickPeaks([1,1,1,1]);
+echo solution('abc');
+echo solution('abcdef');
 ?>
 </body>
 </html>
