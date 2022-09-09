@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <?php 
 /* 
@@ -190,14 +192,30 @@ Challenge Nine: Complete the solution so that it splits the string into pairs of
 Challenge Source: https://www.codewars.com/kata/515de9ae9dcfc28eb6000001
 */
 
-function solution($str) {
-  return $str === "" ? [] : str_split(
-    strlen($str) % 2 === 0 ? $str : $str . '_', 2
-  );
+// function solution($str) {
+//   return $str === "" ? [] : str_split(
+//     strlen($str) % 2 === 0 ? $str : $str . '_', 2
+//   );
+// }
+// // TESTS 
+// echo solution('abc');
+// echo solution('abcdef');
+
+/* 
+Challenge Ten: Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+Challenge Source: https://www.codewars.com/kata/517abf86da9663f1d2000003
+*/
+
+function toCamelCase($str){
+  return preg_replace_callback('/(\-|\_)([a-z])/i', function($match) {
+    return strtoupper($match[2]);
+  }, $str);
 }
 
-echo solution('abc');
-echo solution('abcdef');
+// TESTS
+echo toCamelCase("the-stealth-warrior");
+echo toCamelCase("The_Stealth_Warrior");
 ?>
 </body>
+
 </html>
