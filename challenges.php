@@ -217,7 +217,32 @@ function toCamelCase($str){
 // echo toCamelCase("The_Stealth_Warrior");
 
 /* 
-Challenge Eleven: Trolls are attacking your comment section!
+Challenge Eleven:
+Challenge Source:
+*/
+
+function sumOfMultiples($number){
+  $sum = 0;
+  if ($number <= 0) {
+    return 0;
+  } else {
+    for ($i = 1; $i < $number; $i++) {
+      if ($i % 3 == 0 || $i % 5 == 0) {
+        $sum += $i;
+      }
+    }
+    return $sum;
+  }
+}
+
+// TESTS
+// echo sumOfMultiples(0);
+// echo sumOfMultiples(2);
+// echo sumOfMultiples(3);
+// echo sumOfMultiples(-10);
+
+/* 
+Challenge Twelve: Trolls are attacking your comment section!
 
 A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
 
