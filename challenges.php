@@ -21,11 +21,11 @@ Challenge Source: https://www.codewars.com/kata/50654ddff44f800200000004/solutio
 // }
 
 // Solution
-// function multiply($a, $b) {
-//     return $a * $b;
-// }
+function multiply($a, $b) {
+    return $a * $b;
+}
 
-// // TESTS
+// TESTS
 // echo multiply(4,5);
 // echo multiply(6,3); 
 // echo multiply(2,1);
@@ -35,15 +35,15 @@ Challenge Two: Define a method hello that returns "Hello, Name!" to a given name
 Challenge Source: https://www.codewars.com/kata/57e3f79c9cb119374600046b/php
 */
 
-// function hello($name = ''): string {
-//     if ($name) {
-//         return 'Hello, '.strtoupper(substr($name, 0, 1)).''.strtolower(substr($name, 1).'!');
-//     } else {
-//         return 'Hello, World!';
-//     }
-// }
+function hello($name = ''): string {
+    if ($name) {
+        return 'Hello, '.strtoupper(substr($name, 0, 1)).''.strtolower(substr($name, 1).'!');
+    } else {
+        return 'Hello, World!';
+    }
+}
 
-// // TESTS
+// TESTS
 // echo hello('jImMy');
 // echo hello('');
 // echo hello();
@@ -53,19 +53,19 @@ Challenge Three: We want an array, but not just any old array, an array with con
 Challenge Source: https://www.codewars.com/kata/571d42206414b103dc0006a1
 */
 
-// function arr($n=null) {
-//     $newArr = [];
-//     if ($n == NULL) {
-//       return $newArr;
-//     }
-//     $x = 0;
-//     while ($x < $n) {
-//         array_push($newArr, $x++);
-//     }
-//     return $newArr;
-//   }
+function arr($n=null) {
+    $newArr = [];
+    if ($n == NULL) {
+      return $newArr;
+    }
+    $x = 0;
+    while ($x < $n) {
+        array_push($newArr, $x++);
+    }
+    return $newArr;
+  }
 
-// // TESTS
+// TESTS
 // echo arr();
 // echo arr(4);
 // echo arr(0);
@@ -75,12 +75,12 @@ Challenge Four: Return the number (count) of vowels in the given string. We will
 Challenge Source: https://www.codewars.com/kata/54ff3102c1bad923760001f3
 */
 
-// function getCount($str) {
+function getCount($str) {
   
-//     return strlen(preg_replace("/[^aeiou]/i", "", $str));
-// }
+    return strlen(preg_replace("/[^aeiou]/i", "", $str));
+}
 
-// // TESTS
+// TESTS
 // echo getCount("abracadabra");
 
 /* 
@@ -88,19 +88,19 @@ Challenge Five: Your task is to make a function that can take any non-negative i
 Challenge Source: https://www.codewars.com/kata/5467e4d82edf8bbf40000155
 */
 
-// function descendingOrder(int $n): int {
-//     // Replace with your code
-//     $parseFloat = floatval($n);
-//     $toString = strval($parseFloat);
-//     $length = 1;
-//     $splitStr = str_split($toString, $length);
-//     rsort($splitStr);
-//     $joined = implode($splitStr);
-//     $sign = $n <=> 0;
-//     return $joined * $sign;
-//   }
+function descendingOrder(int $n): int {
+    // Replace with your code
+    $parseFloat = floatval($n);
+    $toString = strval($parseFloat);
+    $length = 1;
+    $splitStr = str_split($toString, $length);
+    rsort($splitStr);
+    $joined = implode($splitStr);
+    $sign = $n <=> 0;
+    return $joined * $sign;
+  }
 
-//   // TESTS
+  // TESTS
 //   echo descendingOrder(42145);
 //   echo descendingOrder(145263);
 //   echo descendingOrder(123456789);
@@ -111,13 +111,13 @@ Challenge Six: Jaden Smith, the son of Will Smith, is the star of films such as 
 Challenge Source: https://www.codewars.com/kata/5390bac347d09b7da40006f6
 */
 
-// function toJadenCase($string) 
-// {
-//    //...
-//   return ucwords($string);
-// }
+function toJadenCase($string) 
+{
+   //...
+  return ucwords($string);
+}
 
-// // TESTS
+// TESTS
 // toJadenCase("How can mirrors be real if our eyes aren't real");
 
 /* 
@@ -126,15 +126,15 @@ Challenge Seven: Define a function that takes one integer argument and returns l
 Challenge Source: https://www.codewars.com/kata/5390bac347d09b7da40006f6
 */
 
-// function is_prime(int $n): bool {
+function is_prime(int $n): bool {
 
-//     for ($x = 2; $x * $x <= $n; $x++) {
-//       if ($n % $x === 0) return false;
-//     }
-//     return $n > 1;
-//   }
+    for ($x = 2; $x * $x <= $n; $x++) {
+      if ($n % $x === 0) return false;
+    }
+    return $n > 1;
+  }
 
-//   // TESTS
+  // TESTS
 //   echo is_prime(1);
 //   echo is_prime(2);
 //   echo is_prime(-1);
@@ -144,38 +144,38 @@ Challenge Eight: In this kata, you will write a function that returns the positi
 Challenge Source: https://www.codewars.com/kata/5279f6fe5ab7f447890006a7
 */
 
-// function checkPlateau($arr) {
-//   $value = $arr[0];
-//   for ($i = 0; $i < count($arr); $i++) {
-//     if ($arr[$i] > $value) return false;
-//     if ($arr[$i] < $value) return true;
-//   }
-// }
+function checkPlateau($arr) {
+  $value = $arr[0];
+  for ($i = 0; $i < count($arr); $i++) {
+    if ($arr[$i] > $value) return false;
+    if ($arr[$i] < $value) return true;
+  }
+}
 
-// function pickPeaks(array $arr) {
-//     // Replace with your code
-//     $output = array('pos' => array(), 'peaks' => array());
+function pickPeaks(array $arr) {
+    // Replace with your code
+    $output = array('pos' => array(), 'peaks' => array());
       
-//     for ($i=1;$i<count($arr)-1;$i++) {
+    for ($i=1;$i<count($arr)-1;$i++) {
       
-//       if ($arr[$i-1] < $arr[$i]) {
-//         if ($arr[$i] > $arr[$i+1]) {
-//         array_push($output['pos'], $i);
-//         array_push($output['peaks'], $arr[$i]);
-//       } else {
-//           if ($arr[$i] === $arr[$i+1]) {
-//             if (checkPlateau(array_slice($arr, $i))) {
-//               array_push($output['pos'], $i);
-//               array_push($output['peaks'], $arr[$i]);
-//             }
-//           }
-//         } 
-//       }
-//     }
-//   return $output;
-// }
+      if ($arr[$i-1] < $arr[$i]) {
+        if ($arr[$i] > $arr[$i+1]) {
+        array_push($output['pos'], $i);
+        array_push($output['peaks'], $arr[$i]);
+      } else {
+          if ($arr[$i] === $arr[$i+1]) {
+            if (checkPlateau(array_slice($arr, $i))) {
+              array_push($output['pos'], $i);
+              array_push($output['peaks'], $arr[$i]);
+            }
+          }
+        } 
+      }
+    }
+  return $output;
+}
 
-// // TESTS
+// TESTS
 // echo pickPeaks([1,2,3,6,4,1,2,3,2,1]);
 // echo pickPeaks([3,2,3,6,4,1,2,3,2,1,2,3]);
 // echo pickPeaks([3,2,3,6,4,1,2,3,2,1,2,2,2,1]);
@@ -192,12 +192,12 @@ Challenge Nine: Complete the solution so that it splits the string into pairs of
 Challenge Source: https://www.codewars.com/kata/515de9ae9dcfc28eb6000001
 */
 
-// function solution($str) {
-//   return $str === "" ? [] : str_split(
-//     strlen($str) % 2 === 0 ? $str : $str . '_', 2
-//   );
-// }
-// // TESTS 
+function solution($str) {
+  return $str === "" ? [] : str_split(
+    strlen($str) % 2 === 0 ? $str : $str . '_', 2
+  );
+}
+// TESTS 
 // echo solution('abc');
 // echo solution('abcdef');
 
@@ -213,8 +213,28 @@ function toCamelCase($str){
 }
 
 // TESTS
-echo toCamelCase("the-stealth-warrior");
-echo toCamelCase("The_Stealth_Warrior");
+// echo toCamelCase("the-stealth-warrior");
+// echo toCamelCase("The_Stealth_Warrior");
+
+/* 
+Challenge Eleven: Trolls are attacking your comment section!
+
+A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+
+Your task is to write a function that takes a string and return a new string with all vowels removed.
+
+For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+
+Note: for this kata y isn't considered a vowel.
+Challenge Source: https://www.codewars.com/kata/52fba66badcd10859f00097e/php
+*/
+
+function disemvowel($string) {
+  return preg_replace('/[aeiou]/i', "", $string);
+}
+
+// TESTS
+echo disemvowel("This website is for losers LOL");
 ?>
 </body>
 
