@@ -241,11 +241,9 @@ function sumOfMultiples($number){
 // echo sumOfMultiples(3);
 // echo sumOfMultiples(-10);
 
-/* 
-Challenge Twelve: Trolls are attacking your comment section!
-
-A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
-
+/*
+Challenge Twelve: Trolls are attacking your comment section! 
+A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat. 
 Your task is to write a function that takes a string and return a new string with all vowels removed.
 
 For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
@@ -259,7 +257,24 @@ function disemvowel($string) {
 }
 
 // TESTS
-echo disemvowel("This website is for losers LOL");
+// echo disemvowel("This website is for losers LOL");
+
+/*
+Challenge Thirteen: In the morning all the doors in the school are closed. The school is quite big: there are N doors. Then pupils start coming. It might be hard to believe, but all of them want to study! Also, there are exactly N children studying in this school, and they come one by one. When these strange children pass by some doors they change their status (i.e. Open -> Closed, Closed -> Open). Each student has their number, and each i-th student alters the status of every i-th door. For example: when the first child comes to the schools, he changes every first door (he opens all of them). The second one changes the status of every second door (he closes some doors: the 2nd, the 4th and so on). Finally, when the last one – the n-th – comes to the school, he changes the status of each n-th door (there's only one such door, though).You need to count how many doors are left opened after all the students have come.
+
+Challenge Source: https://www.codewars.com/kata/57c15d314677bb2bd4000017/php
+*/
+
+function doors(int $n): int {
+  return floor(sqrt($n));
+}
+
+// TESTS
+echo doors(0);
+echo doors(2);
+echo doors(3);
+echo doors(5);
+echo doors(10);
 ?>
 </body>
 
